@@ -1,0 +1,462 @@
+* {
+    box-sizing: border-box;
+}
+
+body {
+    margin: 0;
+    font-family: Arial, Helvetica, sans-serif;
+    background: #f5f3ff;
+    color: #202033;
+}
+
+
+/* HEADER */
+
+.hero {
+    background: linear-gradient(135deg, #6c4cff, #a855f7);
+    color: white;
+    padding: 28px 7%;
+    display: flex;
+    align-items: center;
+    gap: 18px;
+}
+
+.logo {
+    font-size: 48px;
+}
+
+.hero h1 {
+    margin: 0;
+    font-size: 38px;
+}
+
+.hero p {
+    margin: 7px 0 0;
+    font-size: 16px;
+}
+
+
+/* MAIN */
+
+.container {
+    width: 90%;
+    max-width: 1200px;
+    margin: 35px auto;
+}
+
+
+/* CREATE CARD */
+
+.creator-card,
+.result-card {
+    background: white;
+    border-radius: 18px;
+    padding: 28px;
+    margin-bottom: 25px;
+    box-shadow: 0 8px 25px rgba(50, 40, 100, 0.08);
+}
+
+.creator-card h2,
+.result-card h2 {
+    margin-top: 0;
+    color: #5636d8;
+}
+
+
+label {
+    display: block;
+    font-weight: bold;
+    margin: 14px 0 7px;
+}
+
+
+textarea,
+select {
+    width: 100%;
+    padding: 13px;
+    border: 2px solid #e2ddf5;
+    border-radius: 10px;
+    font-size: 15px;
+    background: white;
+}
+
+
+textarea {
+    min-height: 110px;
+    resize: vertical;
+}
+
+
+.form-row {
+    display: grid;
+    grid-template-columns: 1fr 1fr 1fr;
+    gap: 18px;
+}
+
+
+.generate-btn {
+    margin-top: 25px;
+    border: none;
+    padding: 14px 25px;
+    border-radius: 10px;
+    background: #6c4cff;
+    color: white;
+    font-size: 16px;
+    font-weight: bold;
+    cursor: pointer;
+}
+
+
+.generate-btn:hover {
+    background: #5636d8;
+}
+
+
+.generate-btn:disabled {
+    opacity: 0.6;
+    cursor: not-allowed;
+}
+
+
+/* LOADING */
+
+.loading {
+    text-align: center;
+    padding: 40px;
+    background: white;
+    border-radius: 18px;
+}
+
+
+.hidden {
+    display: none !important;
+}
+
+
+.spinner {
+    width: 42px;
+    height: 42px;
+    border: 5px solid #ddd;
+    border-top-color: #6c4cff;
+    border-radius: 50%;
+    margin: auto;
+    animation: spin 1s linear infinite;
+}
+
+
+@keyframes spin {
+    to {
+        transform: rotate(360deg);
+    }
+}
+
+
+/* SUCCESS */
+
+.success {
+    background: #e7f9ed;
+    border: 1px solid #9ee0b1;
+    color: #176b32;
+    padding: 15px;
+    border-radius: 10px;
+    margin-bottom: 20px;
+    font-weight: bold;
+}
+
+
+/* OUTLINE */
+
+.outline-text,
+.story-text {
+    white-space: pre-wrap;
+    line-height: 1.7;
+    font-size: 16px;
+}
+
+
+/* CHARACTERS */
+
+.characters-grid {
+    display: grid;
+    grid-template-columns: repeat(auto-fit, minmax(260px, 1fr));
+    gap: 18px;
+}
+
+
+.character-card {
+    display: flex;
+    gap: 15px;
+    padding: 18px;
+    border-radius: 15px;
+    background: #f8f6ff;
+    border: 2px solid #e8e1ff;
+}
+
+
+.character-avatar {
+    min-width: 65px;
+    height: 65px;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    background: #e8ddff;
+    border-radius: 50%;
+    font-size: 35px;
+}
+
+
+.character-info h3 {
+    margin: 0 0 5px;
+}
+
+
+.character-info p {
+    line-height: 1.5;
+    margin-bottom: 0;
+}
+
+
+.role {
+    color: #6c4cff;
+    font-weight: bold;
+    font-size: 13px;
+}
+
+
+/* PANEL HEADING */
+
+.panel-heading {
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+}
+
+
+#panelCount {
+    background: #eee9ff;
+    color: #5636d8;
+    padding: 7px 12px;
+    border-radius: 20px;
+    font-weight: bold;
+}
+
+
+/* COMIC GRID */
+
+.comic-grid {
+    display: grid;
+    grid-template-columns: repeat(2, 1fr);
+    gap: 25px;
+}
+
+
+/* COMIC PANEL */
+
+.comic-panel {
+    background: white;
+    border: 4px solid #222;
+    border-radius: 8px;
+    overflow: hidden;
+    box-shadow: 6px 6px 0 #222;
+}
+
+
+.panel-number {
+    background: #222;
+    color: white;
+    padding: 8px 12px;
+    font-weight: bold;
+    letter-spacing: 1px;
+}
+
+
+/* ILLUSTRATION */
+
+.illustration {
+    height: 190px;
+    position: relative;
+    overflow: hidden;
+    background: linear-gradient(#bde7ff, #fff5c7);
+}
+
+
+.sun {
+    position: absolute;
+    width: 55px;
+    height: 55px;
+    border-radius: 50%;
+    background: #ffd34d;
+    right: 25px;
+    top: 20px;
+}
+
+
+.mountain {
+    position: absolute;
+    bottom: 0;
+    width: 0;
+    height: 0;
+    border-left: 100px solid transparent;
+    border-right: 100px solid transparent;
+    border-bottom: 125px solid #7d70b3;
+}
+
+
+.mountain-one {
+    left: 5%;
+}
+
+
+.mountain-two {
+    right: 0;
+    border-bottom-color: #9b91c8;
+}
+
+
+.comic-character {
+    position: absolute;
+    left: 45%;
+    bottom: 15px;
+    font-size: 70px;
+    filter: drop-shadow(3px 3px 0 white);
+}
+
+
+/* PANEL CONTENT */
+
+.panel-content {
+    padding: 17px;
+}
+
+
+.panel-content h3 {
+    margin-top: 0;
+    font-size: 18px;
+}
+
+
+.caption {
+    background: #fff6a8;
+    border: 2px solid #222;
+    padding: 9px;
+    margin-top: 10px;
+    font-style: italic;
+}
+
+
+.speech {
+    margin-top: 12px;
+    background: white;
+    border: 2px solid #222;
+    border-radius: 18px;
+    padding: 10px 13px;
+    font-weight: bold;
+}
+
+
+/* BUTTONS */
+
+.actions {
+    display: flex;
+    gap: 15px;
+    justify-content: center;
+    margin: 30px 0;
+}
+
+
+.download-btn,
+.print-btn {
+    border: none;
+    padding: 14px 22px;
+    border-radius: 10px;
+    font-weight: bold;
+    font-size: 15px;
+    cursor: pointer;
+}
+
+
+.download-btn {
+    background: #6c4cff;
+    color: white;
+}
+
+
+.print-btn {
+    background: #222;
+    color: white;
+}
+
+
+.empty {
+    padding: 20px;
+    background: #f5f5f5;
+    border-radius: 10px;
+}
+
+
+/* MOBILE */
+
+@media (max-width: 800px) {
+
+    .form-row {
+        grid-template-columns: 1fr;
+    }
+
+    .comic-grid {
+        grid-template-columns: 1fr;
+    }
+
+    .hero h1 {
+        font-size: 28px;
+    }
+
+}
+
+
+/* PRINT */
+
+@media print {
+
+    body {
+        background: white;
+    }
+
+    .creator-card,
+    .actions,
+    .success {
+        display: none;
+    }
+
+    .hero {
+        background: white;
+        color: black;
+        border-bottom: 2px solid black;
+    }
+
+    .result-card {
+        box-shadow: none;
+        page-break-inside: avoid;
+    }
+
+    .comic-grid {
+        grid-template-columns: 1fr 1fr;
+    }
+
+}
+.ai-panel-image {
+    width: 100%;
+    height: 320px;
+    object-fit: cover;
+    display: block;
+    border-radius: 16px;
+}
+
+.image-error {
+    height: 320px;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    background: #f1f1f1;
+    border-radius: 16px;
+    color: #777;
+}
